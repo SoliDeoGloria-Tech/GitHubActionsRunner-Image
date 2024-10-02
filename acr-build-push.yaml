@@ -1,7 +1,8 @@
 version: v1.1.0
 steps:
-  - build: -t $Registry/runner-custom:$ID .
+  - build: --image $Registry/runner-custom:$ID .
     env:
       - DOCKER_BUILDKIT=1
   - push:
       - $Registry/runner-custom:$ID
+      - $Registry/runner-custom:latest

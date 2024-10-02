@@ -66,6 +66,6 @@ sudo apt-get install -y --no-install-recommends \
 sudo rm -rf /var/lib/apt/lists/*
 EOR
 
-COPY --chmod=0755 *.sh .
+COPY --chmod=0755 ./entrypoint.sh .
 ENTRYPOINT ["./entrypoint.sh"]
 CMD ["./bin/Runner.Listener", "run", "--startuptype", "service"]
